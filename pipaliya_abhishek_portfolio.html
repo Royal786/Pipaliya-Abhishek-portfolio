@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipaliya Abhishek | Full-Stack Digital Specialist & Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#080c14',
+                            surface: '#0f172a',
+                            card: '#131e36',
+                            border: '#1e293b',
+                            primary: '#6366f1',
+                            accent: '#10b981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #080c14;
+            color: #f1f5f9;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(19, 30, 54, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+        .glow-sphere {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(100px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative selection:bg-indigo-500 selection:text-white overflow-x-hidden">
+
+    <!-- Ambient Background Glows -->
+    <div class="glow-sphere w-96 h-96 bg-indigo-500 top-0 left-10"></div>
+    <div class="glow-sphere w-96 h-96 bg-emerald-500 top-96 right-10"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card bg-opacity-80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-sky-500 to-emerald-400 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    PA
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-tight text-white block">Pipaliya Abhishek</span>
+                    <span class="text-xs text-slate-400 font-medium tracking-wide">Surat, Gujarat</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-indigo-400 transition-colors">Core Pillars</a>
+                <a href="#projects" class="hover:text-indigo-400 transition-colors">Featured Work</a>
+                <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#workflow" class="hover:text-indigo-400 transition-colors">Process</a>
+                <a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://wa.me/918849026054" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-500 text-white font-semibold text-sm hover:opacity-90 transition-all shadow-md shadow-indigo-500/25 flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Let's Talk
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Toggle Navigation">
+                <svg id="hamburgerIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-2 pb-6 space-y-3 bg-[#0d1527] border-b border-slate-800 text-sm">
+            <a href="#services" class="block py-2 text-slate-300 hover:text-indigo-400">Core Pillars</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-indigo-400">Featured Work</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-indigo-400">Skills</a>
+            <a href="#workflow" class="block py-2 text-slate-300 hover:text-indigo-400">Process</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-indigo-400">Contact</a>
+            <div class="pt-3">
+                <a href="https://wa.me/918849026054" target="_blank" class="block text-center py-2.5 rounded-lg bg-emerald-500 font-semibold text-white">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-28">
+        <section id="hero" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center text-center">
+            
+            <!-- Availability Pill -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-semibold text-emerald-400 mb-8 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Available for Freelance Projects & Full-Time Roles</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-heading leading-tight max-w-4xl">
+                Hi, I'm <span class="gradient-text">Pipaliya Abhishek</span>
+            </h1>
+
+            <p class="mt-4 text-xl sm:text-2xl font-semibold text-slate-200">
+                Web Developer <span class="text-indigo-400">•</span> Graphic Designer <span class="text-indigo-400">•</span> E-Commerce Specialist <span class="text-indigo-400">•</span> Content Creator
+            </p>
+
+            <p class="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
+                Empowering businesses by fusing modern code, high-converting visual design, and data-driven e-commerce operations. Based in Pasodara, Surat, building digital solutions for growth.
+            </p>
+
+            <!-- Call to Actions -->
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30">
+                    Explore My Work
+                </a>
+                <a href="#contact" class="px-8 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold text-sm transition-all">
+                    Contact Directly
+                </a>
+            </div>
+
+            <!-- Quick Direct Info Strip -->
+            <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl text-left">
+                <a href="mailto:patelabhii@gmail.com" class="glass-card p-4 rounded-xl flex items-center gap-3 transition">
+                    <div class="w-9 h-9 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="overflow-hidden">
+                        <div class="text-[11px] uppercase tracking-wider text-slate-400">Email</div>
+                        <div class="text-xs font-semibold text-slate-200 truncate">patelabhii@gmail.com</div>
+                    </div>
+                </a>
+
+                <a href="tel:+918849026054" class="glass-card p-4 rounded-xl flex items-center gap-3 transition">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-wider text-slate-400">Call / Phone</div>
+                        <div class="text-xs font-semibold text-slate-200">+91 8849026054</div>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/918849026054" target="_blank" rel="noopener noreferrer" class="glass-card p-4 rounded-xl flex items-center gap-3 transition">
+                    <div class="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-wider text-slate-400">WhatsApp</div>
+                        <div class="text-xs font-semibold text-slate-200">Chat Now</div>
+                    </div>
+                </a>
+
+                <div class="glass-card p-4 rounded-xl flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-wider text-slate-400">Location</div>
+                        <div class="text-xs font-semibold text-slate-200">Surat, Gujarat</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800/80">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Core Expertise</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-bold font-heading text-white">Four Pillars of Capability</p>
+                <p class="mt-3 text-slate-400 text-sm">Combining technology, creative visual storytelling, and marketplace strategy to drive actual business results.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pillar 1 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Web Development</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Building fast, responsive, and mobile-first web experiences using clean architecture and modern frameworks.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/60">
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="px-2.5 py-1 bg-slate-800 text-indigo-300 rounded-md">HTML5 / CSS3</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-indigo-300 rounded-md">JavaScript</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-indigo-300 rounded-md">Responsive UI</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-indigo-300 rounded-md">Performance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Graphic Design</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Creating eye-catching branding, high-CTR product creatives, banners, and digital graphics that demand attention.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/60">
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="px-2.5 py-1 bg-slate-800 text-pink-300 rounded-md">Canva Pro</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-pink-300 rounded-md">Photoshop</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-pink-300 rounded-md">Figma</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-pink-300 rounded-md">Brand Visuals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">E-Commerce Specialist</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Optimizing product cataloging, SKU variant mapping, seller panels, logistics, and strategies to minimize RTO.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/60">
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded-md">Meesho</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded-md">Amazon / FK</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded-md">SKU Mapping</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded-md">RTO Control</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Content Strategy</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Crafting persuasive product descriptions, marketing copy, and storytelling designed to convert visitors into buyers.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/60">
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded-md">Product Copy</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded-md">Storytelling</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded-md">AI Workflows</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded-md">SEO Basics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800/80">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Case Studies & Work</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-bold font-heading text-white">Featured Projects</p>
+                </div>
+                
+                <!-- Filter Pills -->
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="filterContainer">
+                    <button class="filter-btn active px-4 py-2 rounded-lg text-xs font-semibold bg-indigo-600 text-white" data-filter="all">All Work</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="ecommerce">E-Commerce</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="web">Web Development</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="design">Visual Design</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                
+                <!-- Project 1: E-Commerce -->
+                <div class="project-item ecommerce glass-card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-48 bg-gradient-to-br from-emerald-950/60 to-slate-900 border-b border-slate-800 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">E-Commerce Case Study</span>
+                            <div class="mt-3 text-3xl font-extrabold text-white font-heading">Marketplace Growth</div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">E-Commerce Catalog & RTO Reduction</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Structured end-to-end product listings on Meesho and marketplaces with high-fidelity A+ style image assets, accurate variant sizing, and description optimization.
+                            </p>
+                            <div class="space-y-2 text-xs text-slate-300 mb-6">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span>Increased listing CTR with cleaner primary images</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span>Lowered customer returns through precise SKU labeling</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[11px] pt-4 border-t border-slate-800/80">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Cataloging</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">RTO Optimization</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Product Creatives</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Web Dev -->
+                <div class="project-item web glass-card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-48 bg-gradient-to-br from-indigo-950/60 to-slate-900 border-b border-slate-800 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider">Web Application</span>
+                            <div class="mt-3 text-3xl font-extrabold text-white font-heading">Modern Web Platform</div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">High-Performance Responsive Web App</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Engineered a lightning-fast responsive web interface built with modern web standards, semantic HTML5, adaptive CSS layouts, and modular vanilla JavaScript.
+                            </p>
+                            <div class="space-y-2 text-xs text-slate-300 mb-6">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                                    <span>Sub-second page load times with lightweight assets</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                                    <span>100% responsive across mobile, tablet, and widescreen</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[11px] pt-4 border-t border-slate-800/80">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-indigo-300">HTML5 / CSS3</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-indigo-300">JavaScript</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Visual Design & Content -->
+                <div class="project-item design glass-card rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-950/60 to-slate-900 border-b border-slate-800 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold uppercase tracking-wider">Brand Identity</span>
+                            <div class="mt-3 text-3xl font-extrabold text-white font-heading">Visual Asset Suite</div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">End-to-End Visual Identity & Social Kit</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Developed a cohesive brand aesthetic encompassing logo concepts, social media templates, marketing promo banners, and high-impact copywriting.
+                            </p>
+                            <div class="space-y-2 text-xs text-slate-300 mb-6">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                                    <span>Consistent color harmony & typography guidelines</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                                    <span>Reusable template system for rapid campaign launches</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[11px] pt-4 border-t border-slate-800/80">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">Brand Identity</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">Social Creatives</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">Canva / Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800/80">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Capabilities</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-bold font-heading text-white">Skills & Tech Stack</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-sm font-bold text-indigo-400 uppercase tracking-wider mb-4">Web Technologies</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>HTML5 / Semantic Web</span>
+                                <span class="text-slate-400">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>CSS3 / Tailwind CSS</span>
+                                <span class="text-slate-400">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>JavaScript (ES6+)</span>
+                                <span class="text-slate-400">Proficient</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Responsive & UI/UX</span>
+                                <span class="text-slate-400">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-sm font-bold text-pink-400 uppercase tracking-wider mb-4">Visual Design</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Canva Pro</span>
+                                <span class="text-slate-400">Expert</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-pink-500 h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Adobe Photoshop</span>
+                                <span class="text-slate-400">Proficient</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-pink-500 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Figma (UI & Wireframing)</span>
+                                <span class="text-slate-400">Proficient</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-pink-500 h-full rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>E-Commerce Banners</span>
+                                <span class="text-slate-400">Expert</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-pink-500 h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-4">E-Commerce Management</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Meesho Seller Portal</span>
+                                <span class="text-slate-400">Expert</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>SKU & Variation Architecture</span>
+                                <span class="text-slate-400">Expert</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>RTO Optimization</span>
+                                <span class="text-slate-400">Specialist</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Inventory & Order Cycle</span>
+                                <span class="text-slate-400">Proficient</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider mb-4">Content & Strategy</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Product Copywriting</span>
+                                <span class="text-slate-400">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-sky-500 h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>AI Writing & Prompting</span>
+                                <span class="text-slate-400">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-sky-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>E-Commerce SEO Basics</span>
+                                <span class="text-slate-400">Proficient</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-sky-500 h-full rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-1">
+                                <span>Digital Storytelling</span>
+                                <span class="text-slate-400">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-sky-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="workflow" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800/80">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Process</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-bold font-heading text-white">How I Deliver Results</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                
+                <div class="glass-card p-6 rounded-2xl relative">
+                    <span class="text-4xl font-extrabold text-slate-700/60 font-heading block mb-3">01</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Discovery & Goal Setting</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Understanding target customers, marketplace dynamics, brand voice, and clear milestones.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl relative">
+                    <span class="text-4xl font-extrabold text-slate-700/60 font-heading block mb-3">02</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Visual & Wireframe Design</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Drafting UI components, high-converting product creatives, color schemas, and prototypes.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl relative">
+                    <span class="text-4xl font-extrabold text-slate-700/60 font-heading block mb-3">03</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Development & Launch</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Writing clean code, uploading verified catalog feeds, and preparing live assets for production.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl relative">
+                    <span class="text-4xl font-extrabold text-slate-700/60 font-heading block mb-3">04</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Measurement & Refinement</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Analyzing metrics (CTR, conversion rate, RTO rates), iterating on feedback for continuous gains.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800/80">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase">Get In Touch</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-bold font-heading text-white">Let's Work Together</p>
+                <p class="mt-3 text-slate-400 text-sm">Have a web project, design need, or e-commerce catalog to scale? Reach out directly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-lg font-bold text-white mb-4">Direct Contact Channels</h3>
+                        <div class="space-y-4">
+                            
+                            <a href="mailto:patelabhii@gmail.com" class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition">
+                                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <span class="text-xs text-slate-400 block">Email Address</span>
+                                    <span class="text-sm font-semibold text-white truncate block">patelabhii@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+918849026054" class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Call / Direct Line</span>
+                                    <span class="text-sm font-semibold text-white block">+91 8849026054</span>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/918849026054" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition">
+                                <div class="w-10 h-10 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Instant Chat</span>
+                                    <span class="text-sm font-semibold text-white block">WhatsApp Message</span>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50">
+                                <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Base City</span>
+                                    <span class="text-sm font-semibold text-white block">Pasodara, Surat, Gujarat</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Message Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                        <h3 class="text-lg font-bold text-white mb-2">Send an Instant Message</h3>
+                        <p class="text-xs text-slate-400 mb-6">Fill in details and start a conversation. Your note opens directly ready to deliver.</p>
+                        
+                        <form id="contactForm" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+                                    <input type="text" id="senderName" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Your Contact Email / Phone</label>
+                                    <input type="text" id="senderContact" required placeholder="Email or Phone" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Service Needed</label>
+                                <select id="serviceType" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-indigo-500">
+                                    <option value="Web Development">Web Development / Website</option>
+                                    <option value="Graphic Design">Graphic Design & Creatives</option>
+                                    <option value="E-Commerce Management">E-Commerce Catalog & Sales Growth</option>
+                                    <option value="Content Creation">Content Creation & Marketing</option>
+                                    <option value="Multiple Services">Full-Package / Multiple Services</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Your Message / Project Details</label>
+                                <textarea id="senderMessage" rows="4" required placeholder="Tell me about what you need..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500"></textarea>
+                            </div>
+
+                            <!-- Feedback Message Box (Replaces alert) -->
+                            <div id="formFeedback" class="hidden p-3 rounded-xl text-xs font-medium"></div>
+
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <button type="submit" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs tracking-wider uppercase transition shadow-lg shadow-indigo-600/25 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                    Send via Email
+                                </button>
+                                <button type="button" id="whatsappSendBtn" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-wider uppercase transition flex items-center gap-2">
+                                    Send to WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800 bg-[#060a12] py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div>
+                <p>© 2026 <span class="text-slate-300 font-medium">Pipaliya Abhishek</span>. All rights reserved.</p>
+                <p class="mt-0.5">Pasodara, Surat, Gujarat, India</p>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <a href="#hero" class="hover:text-indigo-400 transition">Back to Top ↑</a>
+                <a href="mailto:patelabhii@gmail.com" class="hover:text-indigo-400 transition">Email</a>
+                <a href="https://wa.me/918849026054" target="_blank" class="hover:text-emerald-400 transition">WhatsApp</a>
+                <a href="tel:+918849026054" class="hover:text-indigo-400 transition">Call</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    hamburgerIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                }
+            });
+
+            // Close mobile menu on link click
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+        }
+
+        // 2. Interactive Projects Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-indigo-600', 'text-white');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+
+                btn.classList.add('active', 'bg-indigo-600', 'text-white');
+                btn.classList.remove('bg-slate-800', 'text-slate-300');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 3. Contact Form Submission (Mailto & WhatsApp fallback)
+        const contactForm = document.getElementById('contactForm');
+        const formFeedback = document.getElementById('formFeedback');
+        const whatsappSendBtn = document.getElementById('whatsappSendBtn');
+
+        function showFeedback(message, isSuccess = true) {
+            formFeedback.textContent = message;
+            formFeedback.className = `p-3 rounded-xl text-xs font-medium block ${
+                isSuccess ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-800' : 'bg-rose-950/80 text-rose-300 border border-rose-800'
+            }`;
+        }
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('senderName').value.trim();
+                const contact = document.getElementById('senderContact').value.trim();
+                const service = document.getElementById('serviceType').value;
+                const message = document.getElementById('senderMessage').value.trim();
+
+                if (!name || !contact || !message) {
+                    showFeedback('Please fill out all required fields.', false);
+                    return;
+                }
+
+                const subject = encodeURIComponent(`Portfolio Inquiry from ${name} - ${service}`);
+                const body = encodeURIComponent(`Hello Pipaliya Abhishek,\n\nName: ${name}\nContact: ${contact}\nService: ${service}\n\nMessage:\n${message}`);
+
+                showFeedback('Redirecting to your mail client with pre-filled message...', true);
+                window.location.href = `mailto:patelabhii@gmail.com?subject=${subject}&body=${body}`;
+            });
+        }
+
+        if (whatsappSendBtn) {
+            whatsappSendBtn.addEventListener('click', () => {
+                const name = document.getElementById('senderName').value.trim();
+                const contact = document.getElementById('senderContact').value.trim();
+                const service = document.getElementById('serviceType').value;
+                const message = document.getElementById('senderMessage').value.trim();
+
+                const text = encodeURIComponent(
+                    `*New Portfolio Inquiry*\nName: ${name || 'Prospective Client'}\nContact: ${contact || 'Not provided'}\nService: ${service}\nMessage: ${message || 'Hi Abhishek, I would like to discuss a project with you.'}`
+                );
+
+                showFeedback('Opening WhatsApp chat with your message...', true);
+                window.open(`https://wa.me/918849026054?text=${text}`, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
